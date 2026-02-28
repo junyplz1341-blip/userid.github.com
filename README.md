@@ -1,1 +1,160 @@
-# 2wind
+# 이쁜바람 최종본
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이쁜바람 에어컨
+    </title>
+    <!-- Use Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>❄️</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">홈</a></li>
+            <li><a href="#gallery">시공현장 갤러리</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- background-image injected via CSS. High Quality Unsplash Photo representing LG Multi V 5 and HVAC systems -->
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="highlight">이쁜바람 에어컨</span><br>
+                LG/삼성 공식자격증 보유
+            </h1>
+            <p class="hero-subtitle">최신 시스템부터 대형 상업용 시설까지<br>20년 경력의 완벽한 기술력으로 설치/수리/세척을 책임집니다.</p>
+            <div class="hero-scroll-indicator">
+                <div class="mouse"></div>
+                <p>Scroll Down</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Card & Company Intro Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-layout">
+            <!-- Left: Business Card -->
+            <div class="business-card-wrapper">
+                <div class="business-card">
+                    <div class="card-glass">
+                        <div class="card-header">
+                            <div class="card-logo">❄️ 이쁜바람 에어컨</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="expert-name">김준수 <span class="expert-title">대표 엔지니어</span></h3>
+                            <div class="contact-info">
+                                <a href="tel:010-8242-5841" class="contact-item">
+                                    <span class="icon">📞</span>
+                                    <span class="text">010-8242-5841</span>
+                                </a>
+                                <a href="mailto:junyplz@naver.com" class="contact-item">
+                                    <span class="icon">✉️</span>
+                                    <span class="text">junyplz@naver.com</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge lg">LG 삼성 에어컨 전문 시공</span>
+                            <span class="badge">시스템 에어컨 세척/수리</span>
+                            <span class="badge">LG 삼성 시스템 에어컨 설치자격보유</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Company Introduction -->
+            <div class="company-intro">
+                <h2 class="intro-title">이쁜바람 에어컨</h2>
+                <p class="intro-desc">
+                    이쁜바람 에어컨은 수도권에 <strong>4개 지점</strong>이 있습니다.<br>
+                    에어컨 관련 <strong>무료상담</strong>과 <strong>당일 출장</strong>을 약속드리며<br>
+                    전문 수리 세척기사가 직접 방문드립니다.
+                </p>
+                <div class="intro-features">
+                    <div class="feature-item">
+                        <span class="icon">🏢</span>
+                        <span>수도권 4개 지점 운영</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">⏱️</span>
+                        <span>무료상담 & 당일 출장</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">👨‍🔧</span>
+                        <span>전문 기사 직접 방문</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Includes User Uploads & Static Elements) -->
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">현장 시공 갤러리</h2>
+        <p class="section-desc">완벽을 기하는 꼼꼼한 시스템 에어컨 시공 현장입니다.</p>
+
+        <!-- Admin Upload Button -->
+        <div class="admin-upload-container">
+            <button class="btn-primary" id="btnOpenUploadModal">
+                <span class="icon">📷</span> + 내 시공사진 등록하기
+            </button>
+        </div>
+
+        <!-- User Uploaded Photos Grid -->
+        <div class="gallery-grid user-gallery-grid" id="userGalleryGrid">
+            <!-- Dynamically injected user photos via JS -->
+        </div>
+
+        <!-- Static Gallery Grid (20 items) -->
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- 20 gallery items will be dynamically injected by JS -->
+        </div>
+    </section>
+
+    <!-- Upload Photo Modal -->
+    <div class="modal-overlay" id="uploadModalOverlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>시공 사진 업로드</h3>
+                <button class="btn-close-modal" id="btnCloseUploadModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm">
+                    <div class="form-group">
+                        <label for="uploadPhoto">사진 파일 선택</label>
+                        <input type="file" id="uploadPhoto" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="uploadDesc">사진 설명 (선택사항)</label>
+                        <input type="text" id="uploadDesc" placeholder="예: 구월동 스타벅스 매장 시스템에어컨 세척">
+                    </div>
+                    <button type="submit" class="btn-primary full-width">사진 등록하기</button>
+                    <p class="upload-warning">※ 브라우저 용량 제한(약 5MB)으로 고화질 사진 여러 장 등록 시 실패할 수 있습니다.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 이쁜바람 에어컨 (LG/삼성 공식자격 보유). All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
